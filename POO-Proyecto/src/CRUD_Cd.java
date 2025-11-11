@@ -1,5 +1,7 @@
 package com.mycompany.colegio_amigos_de_don_bosco;
 
+import javax.swing.JOptionPane;
+
 public class CRUD_Cd extends javax.swing.JFrame {
 
     /**
@@ -355,10 +357,14 @@ public class CRUD_Cd extends javax.swing.JFrame {
     }
     
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        CCD objetoCD = new CCD();
-        objetoCD.EliminarCd(txtid);
-        objetoCD.VerCd(TablaCd);
-        objetoCD.LimpiarCamposCd(txtid, txtcodigo, txttitulo, txtartista, txtdiscografia, txtyear, txtgenero);
+        if(txttitulo.getText().isEmpty() || txtartista.getText().isEmpty() || txtdiscografia.getText().isEmpty() || txtyear.getText().isEmpty() || txtgenero.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar espacios en blancos");
+            }else{
+            CCD objetoCD = new CCD();
+            objetoCD.EliminarCd(txtid);
+            objetoCD.VerCd(TablaCd);
+            objetoCD.LimpiarCamposCd(txtid, txtcodigo, txttitulo, txtartista, txtdiscografia, txtyear, txtgenero);
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void TablaCdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaCdMouseClicked
@@ -367,17 +373,26 @@ public class CRUD_Cd extends javax.swing.JFrame {
     }//GEN-LAST:event_TablaCdMouseClicked
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        CCD objetoCD = new CCD();
-        objetoCD.InsertarCd(txttitulo, txtartista, txtdiscografia, txtyear, txtgenero);
-        objetoCD.VerCd(TablaCd);
-        objetoCD.LimpiarCamposCd(txtid, txtcodigo, txttitulo, txtartista, txtdiscografia, txtyear, txtgenero);
+        
+            if(txttitulo.getText().isEmpty() || txtartista.getText().isEmpty() || txtdiscografia.getText().isEmpty() || txtyear.getText().isEmpty() || txtgenero.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar espacios en blancos");
+            }else{
+            CCD objetoCD = new CCD();
+            objetoCD.InsertarCd(txttitulo, txtartista, txtdiscografia, txtyear, txtgenero);
+            objetoCD.VerCd(TablaCd);
+            objetoCD.LimpiarCamposCd(txtid, txtcodigo, txttitulo, txtartista, txtdiscografia, txtyear, txtgenero);
+            }
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        CCD objetoCD = new CCD();
-        objetoCD.ActualizarCd(txtid, txttitulo, txtartista, txtdiscografia, txtyear, txtgenero);
-        objetoCD.VerCd(TablaCd);
-        objetoCD.LimpiarCamposCd(txtid, txtcodigo, txttitulo, txtartista, txtdiscografia, txtyear, txtgenero);
+        if(txttitulo.getText().isEmpty() || txtartista.getText().isEmpty() || txtdiscografia.getText().isEmpty() || txtyear.getText().isEmpty() || txtgenero.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar espacios en blancos");
+            }else{
+             CCD objetoCD = new CCD();
+            objetoCD.ActualizarCd(txtid, txttitulo, txtartista, txtdiscografia, txtyear, txtgenero);
+            objetoCD.VerCd(TablaCd);
+            objetoCD.LimpiarCamposCd(txtid, txtcodigo, txttitulo, txtartista, txtdiscografia, txtyear, txtgenero);
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed

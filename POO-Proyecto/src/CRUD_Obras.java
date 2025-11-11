@@ -1,5 +1,7 @@
 package com.mycompany.colegio_amigos_de_don_bosco;
 
+import javax.swing.JOptionPane;
+
 public class CRUD_Obras extends javax.swing.JFrame {
 
     /**
@@ -354,10 +356,14 @@ public class CRUD_Obras extends javax.swing.JFrame {
     }
     
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        CObra objetoObra = new CObra();
-        objetoObra.EliminarObra(txtid);
-        objetoObra.VerObra(TablaObra);
-        objetoObra.LimpiarCamposObra(txtid, txtcodigo, txttitulo, txtautor, txteditorial, txtyear, txtgenero);
+        if(txttitulo.getText().isEmpty() || txtautor.getText().isEmpty() || txteditorial.getText().isEmpty() || txtyear.getText().isEmpty() || txtgenero.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar espacios en blancos");
+            }else{
+            CObra objetoObra = new CObra();
+            objetoObra.EliminarObra(txtid);
+            objetoObra.VerObra(TablaObra);
+            objetoObra.LimpiarCamposObra(txtid, txtcodigo, txttitulo, txtautor, txteditorial, txtyear, txtgenero);
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void TablaObraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaObraMouseClicked
@@ -366,16 +372,25 @@ public class CRUD_Obras extends javax.swing.JFrame {
     }//GEN-LAST:event_TablaObraMouseClicked
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        CObra objetoObra = new CObra();
-        objetoObra.InsertarObra(txttitulo, txtautor, txteditorial, txtyear, txtgenero);
-        objetoObra.VerObra(TablaObra);
+        if(txttitulo.getText().isEmpty() || txtautor.getText().isEmpty() || txteditorial.getText().isEmpty() || txtyear.getText().isEmpty() || txtgenero.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar espacios en blancos");
+            }else{
+            CObra objetoObra = new CObra();
+            objetoObra.InsertarObra(txttitulo, txtautor, txteditorial, txtyear, txtgenero);
+            objetoObra.VerObra(TablaObra);
+            objetoObra.LimpiarCamposObra(txtid, txtcodigo, txttitulo, txtautor, txteditorial, txtyear, txtgenero);
+        }
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        CObra objetoObra = new CObra();
-        objetoObra.ActualizarObra(txtid, txttitulo, txtautor, txteditorial, txtyear, txtgenero);
-        objetoObra.VerObra(TablaObra);
-        objetoObra.LimpiarCamposObra(txtid, txtcodigo, txttitulo, txtautor, txteditorial, txtyear, txtgenero);
+        if(txttitulo.getText().isEmpty() || txtautor.getText().isEmpty() || txteditorial.getText().isEmpty() || txtyear.getText().isEmpty() || txtgenero.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar espacios en blancos");
+            }else{
+            CObra objetoObra = new CObra();
+            objetoObra.ActualizarObra(txtid, txttitulo, txtautor, txteditorial, txtyear, txtgenero);
+            objetoObra.VerObra(TablaObra);
+            objetoObra.LimpiarCamposObra(txtid, txtcodigo, txttitulo, txtautor, txteditorial, txtyear, txtgenero);
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed

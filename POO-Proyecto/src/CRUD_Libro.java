@@ -1,5 +1,7 @@
 package com.mycompany.colegio_amigos_de_don_bosco;
 
+import javax.swing.JOptionPane;
+
 public class CRUD_Libro extends javax.swing.JFrame {
 
     /**
@@ -370,9 +372,14 @@ public class CRUD_Libro extends javax.swing.JFrame {
     }
     
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-            CLibro objetoLibro = new CLibro();
+            if(txttitulo.getText().isEmpty() || txtautor.getText().isEmpty() || txteditorial.getText().isEmpty() || txtnumpag.getText().isEmpty() || txtyear.getText().isEmpty()|| txtcategoria.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar espacios en blancos");
+            }else{
+             CLibro objetoLibro = new CLibro();
             objetoLibro.InsertarLibro(txttitulo, txtautor, txteditorial, txtnumpag, txtyear, txtcategoria);
             objetoLibro.VerLibro(TablaLibro);
+            objetoLibro.LimpiarCamposLibros(txtid, txtcodigo, txttitulo, txtautor, txteditorial, txtnumpag, txtyear, txtcategoria);
+            }
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -385,17 +392,25 @@ public class CRUD_Libro extends javax.swing.JFrame {
     }//GEN-LAST:event_TablaLibroMouseClicked
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        CLibro objetoLibro = new CLibro();
-        objetoLibro.ActualizarLibro(txtid, txttitulo, txtautor, txteditorial, txtnumpag, txtyear, txtcategoria);
-        objetoLibro.VerLibro(TablaLibro);
-        objetoLibro.LimpiarCamposLibros(txtid, txtcodigo, txttitulo, txtautor, txteditorial, txtnumpag, txtyear, txtcategoria);
+        if(txttitulo.getText().isEmpty() || txtautor.getText().isEmpty() || txteditorial.getText().isEmpty() || txtnumpag.getText().isEmpty() || txtyear.getText().isEmpty()|| txtcategoria.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar espacios en blancos");
+            }else{
+             CLibro objetoLibro = new CLibro();
+            objetoLibro.ActualizarLibro(txtid, txttitulo, txtautor, txteditorial, txtnumpag, txtyear, txtcategoria);
+            objetoLibro.VerLibro(TablaLibro);
+            objetoLibro.LimpiarCamposLibros(txtid, txtcodigo, txttitulo, txtautor, txteditorial, txtnumpag, txtyear, txtcategoria);
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        CLibro objetoLibro = new CLibro();
-        objetoLibro.EliminarLibro(txtid);
-        objetoLibro.VerLibro(TablaLibro);
-        objetoLibro.LimpiarCamposLibros(txtid, txtcodigo, txttitulo, txtautor, txteditorial, txtnumpag, txtyear, txtcategoria);
+        if(txttitulo.getText().isEmpty() || txtautor.getText().isEmpty() || txteditorial.getText().isEmpty() || txtnumpag.getText().isEmpty() || txtyear.getText().isEmpty()|| txtcategoria.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar espacios en blancos");
+            }else{
+            CLibro objetoLibro = new CLibro();
+            objetoLibro.EliminarLibro(txtid);
+            objetoLibro.VerLibro(TablaLibro);
+            objetoLibro.LimpiarCamposLibros(txtid, txtcodigo, txttitulo, txtautor, txteditorial, txtnumpag, txtyear, txtcategoria);
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

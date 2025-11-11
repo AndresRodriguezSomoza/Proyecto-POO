@@ -1,5 +1,7 @@
 package com.mycompany.colegio_amigos_de_don_bosco;
 
+import javax.swing.JOptionPane;
+
 public class CRUD_Patentes extends javax.swing.JFrame {
 
     /**
@@ -367,24 +369,36 @@ public class CRUD_Patentes extends javax.swing.JFrame {
     }
     
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        CPatentes objetoPatentes = new CPatentes();
-        objetoPatentes.InsertarPatentes(txtcodigo, txttitulo, txtinventor, txttitular, txtfecha, txtpais, txtpatente);
-        objetoPatentes.VerPatentes(TablaPatente);
-        objetoPatentes.LimpiarCamposPatente(txtid, txtcodigo, txttitulo, txtinventor, txttitular, txtfecha, txtpais, txtpatente);
+        if(txttitulo.getText().isEmpty() || txtinventor.getText().isEmpty() || txttitular.getText().isEmpty() || txtfecha.getText().isEmpty() || txtpais.getText().isEmpty() || txtpatente.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar espacios en blancos");
+            }else{
+            CPatentes objetoPatentes = new CPatentes();
+            objetoPatentes.InsertarPatentes(txtcodigo, txttitulo, txtinventor, txttitular, txtfecha, txtpais, txtpatente);
+            objetoPatentes.VerPatentes(TablaPatente);
+            objetoPatentes.LimpiarCamposPatente(txtid, txtcodigo, txttitulo, txtinventor, txttitular, txtfecha, txtpais, txtpatente);
+        }
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        CPatentes objetoPatentes = new CPatentes();
-        objetoPatentes.ActualizarPatente(txtid, txttitulo, txtinventor, txttitular, txtfecha, txtpais, txtpatente);
-        objetoPatentes.VerPatentes(TablaPatente);
-        objetoPatentes.LimpiarCamposPatente(txtid, txtcodigo, txttitulo, txtinventor, txttitular, txtfecha, txtpais, txtpatente);
+        if(txttitulo.getText().isEmpty() || txtinventor.getText().isEmpty() || txttitular.getText().isEmpty() || txtfecha.getText().isEmpty() || txtpais.getText().isEmpty() || txtpatente.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar espacios en blancos");
+            }else{
+            CPatentes objetoPatentes = new CPatentes();
+            objetoPatentes.ActualizarPatente(txtid, txttitulo, txtinventor, txttitular, txtfecha, txtpais, txtpatente);
+            objetoPatentes.VerPatentes(TablaPatente);
+            objetoPatentes.LimpiarCamposPatente(txtid, txtcodigo, txttitulo, txtinventor, txttitular, txtfecha, txtpais, txtpatente);
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        CPatentes objetoPatentes = new CPatentes();
-        objetoPatentes.EliminarPatente(txtid);
-        objetoPatentes.VerPatentes(TablaPatente);
-        objetoPatentes.LimpiarCamposPatente(txtid, txtcodigo, txttitulo, txtinventor, txttitular, txtfecha, txtpais, txtpatente);
+        if(txttitulo.getText().isEmpty() || txtinventor.getText().isEmpty() || txttitular.getText().isEmpty() || txtfecha.getText().isEmpty() || txtpais.getText().isEmpty() || txtpatente.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "No dejar espacios en blancos");
+            }else{
+            CPatentes objetoPatentes = new CPatentes();
+            objetoPatentes.EliminarPatente(txtid);
+            objetoPatentes.VerPatentes(TablaPatente);
+            objetoPatentes.LimpiarCamposPatente(txtid, txtcodigo, txttitulo, txtinventor, txttitular, txtfecha, txtpais, txtpatente);
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void TablaPatenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaPatenteMouseClicked

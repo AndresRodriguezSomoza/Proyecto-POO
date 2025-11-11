@@ -163,7 +163,7 @@ public class CCD {
         conexiondb objetoConexion = new conexiondb();
         EntidadCd objetoEntidadCd = new EntidadCd();
         
-        String consulta = "DELETE FROM libro WHERE libro.id = ?;";
+        String consulta = "DELETE FROM cd WHERE cd.id = ?;";
         
         try{
             objetoEntidadCd.setId(Integer.parseInt(id.getText()));
